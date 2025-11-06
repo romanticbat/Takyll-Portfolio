@@ -12,9 +12,9 @@ const GALLERY = [
   },
   {
     id: 2,
-    title: "RPG Fanart",
+    title: "RPG - Fanart",
     src: "/images/image2.jpg",
-    category: "Original",
+    category: "Fanart",
     year: 2024,
     description: "Character study with bold expression and red accents.",
   },
@@ -22,7 +22,7 @@ const GALLERY = [
     id: 3,
     title: "Juno - Fanart",
     src: "/images/image3.jpg",
-    category: "Original",
+    category: "Fanart",
     year: 2024,
     description: "Portrait with clean shapes and colored background.",
   },
@@ -56,13 +56,13 @@ export default function TakyllPortfolio() {
     setActiveIndex((i) => (i - 1 + filtered.length) % filtered.length);
   }
 
-  const heroImage = GALLERY[0]?.src || "/images/hero.jpg";
+  const heroImage = GALLERY[0]?.src || "/images/image4.jpg";
 
   return (
     <div className="min-h-screen bg-[#0f0f10] text-gray-100 antialiased">
       <header className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-md bg-gradient-to-br from-red-600 to-red-400 flex items-center justify-center font-bold text-white shadow-md">
+          <div className="w-12 h-12 rounded-md bg-gradient-to-br from-[#d945ff] to-[#645394] items-center justify-center font-bold text-white shadow-md">
             TAK
           </div>
           <div>
@@ -73,7 +73,6 @@ export default function TakyllPortfolio() {
         <nav className="hidden md:flex gap-6 text-sm text-gray-300">
           <a href="#portfolio" className="hover:text-white">Portfólio</a>
           <a href="#commissions" className="hover:text-white">Comissões</a>
-          <a href="#about" className="hover:text-white">Sobre</a>
           <a href="#contact" className="hover:text-white">Contato</a>
         </nav>
         <div className="md:hidden text-gray-300">Menu</div>
@@ -83,22 +82,21 @@ export default function TakyllPortfolio() {
       <section className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center gap-8">
         <div className="flex-1">
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-            Retratos de atitude <span className="text-red-400">e expressão.</span>
+            Sobre <span className="text-[#b0ef49]">Mim</span>
           </h2>
-          <p className="mt-4 text-gray-300 max-w-xl">
-            Arte digital com cores ousadas, iluminação cinematográfica e personagens cheios de personalidade. Disponível para comissões — veja exemplos abaixo.
+          <p className="mt-4 text-gray-300 max-w-xl">Olá! Meu nome é Takyll. Sou ilustradora e futura designer, apaixonada por transformar ideias em arte. Confira a seguir alguns dos meus trabalhos e sinta-se à vontade para entrar em contato!
           </p>
           <div className="flex gap-3 mt-6">
-            <a href="#portfolio" className="px-4 py-2 bg-red-500 hover:bg-red-600 rounded-md text-white font-medium">Ver Portfólio</a>
+            <a href="#portfolio" className="px-4 py-2 bg-[#d945ff] hover:bg-[#645394] rounded-md text-white font-medium">Ver Portfólio</a>
             <a href="#commissions" className="px-4 py-2 border border-gray-700 rounded-md text-gray-200">Comissões</a>
           </div>
           <div className="mt-8 text-sm text-gray-400">
-            <strong>Ferramentas:</strong> Procreate, Photoshop, Clip Studio Paint.
+            <strong>Ferramentas de trabalho:</strong> Crio minhas artes principalmente no Krita, explorando cores, luz e expressão em cada ilustração.
           </div>
         </div>
         <div className="flex-1 w-full">
           <div className="rounded-xl overflow-hidden shadow-xl" style={{ background: "linear-gradient(180deg,#111 0%, #0b0b0c 100%)" }}>
-            <img src={heroImage} alt="hero" className="w-full h-64 object-cover md:h-96" />
+            <img src="/images/image4.jpg" alt="hero" className="w-full h-64 object-cover md:h-96" />
           </div>
         </div>
       </section>
@@ -114,7 +112,7 @@ export default function TakyllPortfolio() {
                 onClick={() => setSelectedCategory(c)}
                 className={`text-sm px-3 py-1 rounded-full transition ${
                   selectedCategory === c
-                    ? "bg-red-500 text-white"
+                    ? "bg-[#b0ef49] text-white"
                     : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                 }`}
               >
@@ -145,72 +143,82 @@ export default function TakyllPortfolio() {
       {/* COMMISSIONS */}
       <section id="commissions" className="max-w-6xl mx-auto px-6 py-12">
         <h3 className="text-2xl font-bold">Comissões</h3>
-        <p className="text-gray-400 mt-2">Faixas de preço e exemplos. Preço final pode variar de acordo com complexidade.</p>
+        <p className="text-gray-400 mt-2">Valores variam conforme complexidade, poses, fundo e nível de detalhamento.</p>
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-4 bg-gray-900 rounded-lg border border-gray-800">
-            <h4 className="font-semibold">Sketch Rápido</h4>
-            <p className="text-sm text-gray-400 mt-2">Busto simples, linhas limpas. Entrega: 3-5 dias.</p>
-            <div className="mt-4 font-bold">R$ 40 - R$ 80</div>
-            <a href="#contact" className="mt-4 inline-block px-3 py-2 bg-red-500 rounded-md text-white">Solicitar</a>
+            <h4 className="font-semibold">Pintura Simples</h4>
+            <p className="text-sm text-gray-400 mt-2">Arte com line e cores sombreadas de forma simples. Disponível em busto, meio corpo ou corpo inteiro.</p>
+            <div className="mt-4 font-bold">R$ 50 - R$ 80</div>
+            <a href="#contact" className="mt-4 inline-block px-3 py-2 bg-[#d945ff] hover:bg-[#645394] rounded-md text-white transition">Solicitar</a>
           </div>
           <div className="p-4 bg-gray-900 rounded-lg border border-gray-800">
-            <h4 className="font-semibold">Retrato Colorido</h4>
-            <p className="text-sm text-gray-400 mt-2">Busto ou meio corpo, pintura digital completa. Entrega: 1-2 semanas.</p>
-            <div className="mt-4 font-bold">R$ 150 - R$ 300</div>
-            <a href="#contact" className="mt-4 inline-block px-3 py-2 bg-red-500 rounded-md text-white">Solicitar</a>
+            <h4 className="font-semibold">Render (Pintura Completa)</h4>
+            <p className="text-sm text-gray-400 mt-2">Arte com acabamento completo e pintura detalhada. Disponível para busto, meio corpo e corpo inteiro.</p>
+            <div className="mt-4 font-bold">R$ 85 - R$ 170</div>
+            <a href="#contact" className="mt-4 inline-block px-3 py-2 bg-[#d945ff] hover:bg-[#645394] rounded-md text-white transition">Solicitar</a>
           </div>
           <div className="p-4 bg-gray-900 rounded-lg border border-gray-800">
-            <h4 className="font-semibold">Cena / Ilustração</h4>
-            <p className="text-sm text-gray-400 mt-2">Composição completa, background detalhado. Entrega: 2-4 semanas.</p>
-            <div className="mt-4 font-bold">R$ 400+</div>
-            <a href="#contact" className="mt-4 inline-block px-3 py-2 bg-red-500 rounded-md text-white">Solicitar</a>
+            <h4 className="font-semibold">Ilustração Completa</h4>
+            <p className="text-sm text-gray-400 mt-2">Ideal para projetos profissionais: capas de livros, cenas completas, banners, artes para brindes e materiais promocionais.</p>
+            <div className="mt-4 font-bold">R$ 200 - R$ 400</div>
+            <a href="#contact" className="mt-4 inline-block px-3 py-2 bg-[#d945ff] hover:bg-[#645394] rounded-md text-white transition">Solicitar</a>
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-6 items-center">
-          <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold">Sobre</h3>
-            <p className="text-gray-300 mt-3">Takyll é uma ilustradora digital focada em retratos e personagens. Seu trabalho mistura traços realistas com estética de quadrinhos e paletas vibrantes. Aceita comissões e trabalha principalmente com personagens e estudos de luz.</p>
-            <ul className="mt-4 text-sm text-gray-400 space-y-1">
-              <li>• Atua com Ilustração digital desde 2018</li>
-              <li>• Ferramentas: Procreate, Photoshop</li>
-              <li>• Responde com prazos e processo claro para cada pedido</li>
-            </ul>
-            <div className="mt-4 flex gap-3">
-              <a href="#" className="text-sm text-gray-300 hover:text-white">Instagram</a>
-              <a href="#" className="text-sm text-gray-300 hover:text-white">Twitter / X</a>
-              <a href="#" className="text-sm text-gray-300 hover:text-white">ArtStation</a>
-            </div>
-          </div>
-          <div className="rounded-lg overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 p-4">
-            <img src="/images/image4.jpg" alt="Takyll" className="w-full h-48 object-cover rounded-md" />
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
+     {/* CONTACT */}
       <section id="contact" className="max-w-6xl mx-auto px-6 py-12">
         <h3 className="text-2xl font-bold">Contato</h3>
-        <p className="text-gray-400 mt-2">Para comissões e parcerias, envie e-mail ou preencha o formulário.</p>
+        <p className="text-gray-400 mt-2">
+        Entre em contato para comissões, colaborações ou dúvidas sobre meu trabalho.
+        </p>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           <div className="p-6 bg-gray-900 rounded-lg border border-gray-800">
             <h4 className="font-semibold">E-mail</h4>
-            <p className="text-sm text-gray-400 mt-2">takyll@example.com</p>
+            <p className="text-sm text-gray-400 mt-2">
+              takyllart07outlook@gmail.com
+            </p>
             <h4 className="font-semibold mt-6">Redes</h4>
-            <div className="mt-2 text-sm text-gray-400">Instagram: @takyll • Twitter: @takyll_art</div>
+            <div className="mt-4 flex flex-col gap-2">
+              <a
+                href="https://www.instagram.com/takyll?igsh=eG5zdzM0YXhwbWVy"
+                className="text-sm text-gray-300 hover:text-white"
+              >
+                ⨯ Instagram
+              </a>
+              <a
+                href="https://www.tiktok.com/@takylloop?_r=1&_t=ZS-919PfeD9BEw"
+                className="text-sm text-gray-300 hover:text-white"
+              >
+                ⨯ TikTok
+              </a>
+            </div>
           </div>
-          <form className="p-6 bg-gray-900 rounded-lg border border-gray-800" onSubmit={(e) => { e.preventDefault(); alert('Formulário enviado (exemplo). Abra o arquivo para integrar com backend).'); }}>
-            <label className="block text-sm text-gray-300">Nome</label>
-            <input required className="mt-1 w-full rounded-md p-2 bg-gray-800 border border-gray-700 text-white text-sm" />
-            <label className="block text-sm text-gray-300 mt-3">E-mail</label>
-            <input required type="email" className="mt-1 w-full rounded-md p-2 bg-gray-800 border border-gray-700 text-white text-sm" />
-            <label className="block text-sm text-gray-300 mt-3">Mensagem</label>
-            <textarea required className="mt-1 w-full rounded-md p-2 bg-gray-800 border border-gray-700 text-white text-sm h-28" />
-            <button type="submit" className="mt-4 px-4 py-2 bg-red-500 rounded-md">Enviar</button>
-          </form>
+
+          {/* Mensagem profissional substituindo o formulário */}
+          <div className="bg-[#0b0f1c] p-6 rounded-xl flex flex-col justify-center">
+            <p className="text-gray-300 leading-relaxed">
+              As solicitações de comissões e dúvidas são realizadas diretamente
+              pelo <strong>Instagram</strong>. Assim posso conversar com você de
+              forma mais pessoal e entender melhor a sua ideia antes de começar
+              a arte.
+            </p>
+
+            <p className="text-gray-300 mt-3 leading-relaxed">
+              No direct, podemos discutir detalhes como o tipo de desenho,
+              estilo, prazos, valores e referências visuais, garantindo que o
+              resultado final saia exatamente como você imagina.
+            </p>
+
+            <a
+              href="https://www.instagram.com/takyll?igsh=eG5zdzM0YXhwbWVy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#d945ff] hover:bg-[#645394] rounded-md text-white text-lg font-medium transition"
+            >
+              ⨯ Falar pelo Instagram
+            </a>
+          </div>
         </div>
       </section>
 
@@ -236,10 +244,9 @@ export default function TakyllPortfolio() {
                     <p className="text-sm text-gray-300 mt-2">{filtered[activeIndex].description}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button onClick={prev} className="px-3 py-2 bg-gray-800 rounded-md">Prev</button>
-                    <button onClick={next} className="px-3 py-2 bg-gray-800 rounded-md">Next</button>
-                    <button onClick={() => { navigator.clipboard?.writeText(window.location.href); }} className="px-3 py-2 bg-gray-800 rounded-md">Copy Link</button>
-                    <button onClick={closeModal} className="px-3 py-2 bg-red-500 rounded-md">Close</button>
+                    <button onClick={prev} className="px-3 py-2 bg-gray-800 rounded-md">Voltar</button>
+                    <button onClick={next} className="px-3 py-2 bg-gray-800 rounded-md">Próximo</button>
+                    <button onClick={closeModal} className="mt-0 inline-block px-3 py-2 bg-[#b0ef49] hover:bg-[#645394] rounded-md text-white transition">Fechar</button>
                   </div>
                 </div>
               </div>
