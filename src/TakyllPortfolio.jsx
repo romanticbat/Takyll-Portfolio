@@ -25,6 +25,78 @@ const GALLERY = [
     year: 2024,
     description: "Portrait with clean shapes and colored background.",
   },
+  {
+    id: 4,
+    title: "Juno - Fanart",
+    src: "/images/image5.jpg",
+    category: "Fanart",
+    year: 2024,
+    description: "Portrait with clean shapes and colored background.",
+  },
+  {
+    id: 5,
+    title: "Juno - Fanart",
+    src: "/images/image6.jpg",
+    category: "Original",
+    year: 2025,
+    description: "Portrait with clean shapes and colored background.",
+  },
+  {
+    id: 6,
+    title: "Juno - Fanart",
+    src: "/images/image7.jpg",
+    category: "Original",
+    year: 2025,
+    description: "Portrait with clean shapes and colored background.",
+  },
+  {
+    id: 7,
+    title: "Juno - Fanart",
+    src: "/images/image8.jpg",
+    category: "Fanart",
+    year: 2025,
+    description: "Portrait with clean shapes and colored background.",
+  },
+  {
+    id: 8,
+    title: "Juno - Fanart",
+    src: "/images/image9.jpg",
+    category: "Fanart",
+    year: 2025,
+    description: "Portrait with clean shapes and colored background.",
+  },
+  {
+    id: 9,
+    title: "Juno - Fanart",
+    src: "/images/image10.jpg",
+    category: "Fanart",
+    year: 2024,
+    description: "Portrait with clean shapes and colored background.",
+  },
+  {
+    id: 10,
+    title: "Juno - Fanart",
+    src: "/images/image11.jpg",
+    category: "Fanart",
+    year: 2025,
+    description: "Portrait with clean shapes and colored background.",
+  },
+  {
+    id: 11,
+    title: "Juno - Fanart",
+    src: "/images/image12.jpg",
+    category: "Fanart",
+    year: 2025,
+    description: "Portrait with clean shapes and colored background.",
+  },
+  {
+    id: 12,
+    title: "Juno - Fanart",
+    src: "/images/image13.jpg",
+    category: "Fanart",
+    year: 2025,
+    description: "Portrait with clean shapes and colored background.",
+  },
 ];
 
 const CATEGORIES = ["All", "Original", "Fanart", "Commissions"];
@@ -55,7 +127,7 @@ export default function TakyllPortfolio() {
     setActiveIndex((i) => (i - 1 + filtered.length) % filtered.length);
   }
 
-  const heroImage = GALLERY[0]?.src || "/images/image4.jpg";
+  const heroImage = GALLERY[-1]?.src || "/images/image4.jpg";
 
 return (
   <div className="relative min-h-screen text-gray-100 antialiased overflow-hidden">
