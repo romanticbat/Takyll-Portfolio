@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const GALLERY = [
   {
     id: 1,
-    title: "Homem Aranha - Fanart",
+    title: "Homem Aranha",
     src: "/images/image1.jpg",
     category: "Fanart",
     year: 2025,
@@ -11,7 +11,7 @@ const GALLERY = [
   },
   {
     id: 2,
-    title: "RPG - Fanart",
+    title: "Natal Macabro",
     src: "/images/image2.jpg",
     category: "Fanart",
     year: 2024,
@@ -19,7 +19,7 @@ const GALLERY = [
   },
   {
     id: 3,
-    title: "Juno - Fanart",
+    title: "You make me Juno, OW2",
     src: "/images/image3.jpg",
     category: "Fanart",
     year: 2024,
@@ -27,7 +27,7 @@ const GALLERY = [
   },
   {
     id: 4,
-    title: "Juno - Fanart",
+    title: "Nosferatu",
     src: "/images/image5.jpg",
     category: "Fanart",
     year: 2024,
@@ -35,7 +35,7 @@ const GALLERY = [
   },
   {
     id: 5,
-    title: "Juno - Fanart",
+    title: "Missão Cósmica - Capa de Livro",
     src: "/images/image6.jpg",
     category: "Original",
     year: 2025,
@@ -43,7 +43,7 @@ const GALLERY = [
   },
   {
     id: 6,
-    title: "Juno - Fanart",
+    title: "Cirse - Personagem de RPG",
     src: "/images/image7.jpg",
     category: "Original",
     year: 2025,
@@ -51,7 +51,7 @@ const GALLERY = [
   },
   {
     id: 7,
-    title: "Juno - Fanart",
+    title: "GojoGeto",
     src: "/images/image8.jpg",
     category: "Fanart",
     year: 2025,
@@ -59,7 +59,7 @@ const GALLERY = [
   },
   {
     id: 8,
-    title: "Juno - Fanart",
+    title: "Doechii",
     src: "/images/image9.jpg",
     category: "Fanart",
     year: 2025,
@@ -67,7 +67,7 @@ const GALLERY = [
   },
   {
     id: 9,
-    title: "Juno - Fanart",
+    title: "Natal Macabro",
     src: "/images/image10.jpg",
     category: "Fanart",
     year: 2024,
@@ -75,7 +75,7 @@ const GALLERY = [
   },
   {
     id: 10,
-    title: "Juno - Fanart",
+    title: "Juno, OW2",
     src: "/images/image11.jpg",
     category: "Fanart",
     year: 2025,
@@ -83,7 +83,7 @@ const GALLERY = [
   },
   {
     id: 11,
-    title: "Juno - Fanart",
+    title: "Lara Raj",
     src: "/images/image12.jpg",
     category: "Fanart",
     year: 2025,
@@ -91,7 +91,7 @@ const GALLERY = [
   },
   {
     id: 12,
-    title: "Juno - Fanart",
+    title: "Rumi, K-Pop Demon Hunters",
     src: "/images/image13.jpg",
     category: "Fanart",
     year: 2025,
