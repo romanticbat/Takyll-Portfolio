@@ -7,7 +7,7 @@ const GALLERY = [
     src: "/images/image1.jpg",
     category: "Fanart",
     year: 2025,
-    description: "Digital fanart study — dramatic lighting and motion.",
+    description: "",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const GALLERY = [
     src: "/images/image2.jpg",
     category: "Fanart",
     year: 2024,
-    description: "Character study with bold expression and red accents.",
+    description: "",
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const GALLERY = [
     src: "/images/image3.jpg",
     category: "Fanart",
     year: 2024,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const GALLERY = [
     src: "/images/image5.jpg",
     category: "Fanart",
     year: 2024,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const GALLERY = [
     src: "/images/image6.jpg",
     category: "Original",
     year: 2025,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ const GALLERY = [
     src: "/images/image7.jpg",
     category: "Original",
     year: 2025,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 7,
@@ -55,7 +55,7 @@ const GALLERY = [
     src: "/images/image8.jpg",
     category: "Fanart",
     year: 2025,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 8,
@@ -63,7 +63,7 @@ const GALLERY = [
     src: "/images/image9.jpg",
     category: "Fanart",
     year: 2025,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 9,
@@ -71,7 +71,7 @@ const GALLERY = [
     src: "/images/image10.jpg",
     category: "Fanart",
     year: 2024,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 10,
@@ -79,7 +79,7 @@ const GALLERY = [
     src: "/images/image11.jpg",
     category: "Fanart",
     year: 2025,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 11,
@@ -87,7 +87,7 @@ const GALLERY = [
     src: "/images/image12.jpg",
     category: "Fanart",
     year: 2025,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
   {
     id: 12,
@@ -95,7 +95,7 @@ const GALLERY = [
     src: "/images/image13.jpg",
     category: "Fanart",
     year: 2025,
-    description: "Portrait with clean shapes and colored background.",
+    description: "",
   },
 ];
 
