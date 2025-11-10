@@ -106,16 +106,32 @@ const GALLERY = [
     description: "",
   },
     {
-    id: 12,
-    title: "Mitski",
+    id: 14,
+    title: "The Mitski Club",
     src: "/images/image15.jpg",
     category: "Fanart",
     year: 2025,
     description: "",
   },
+    {
+    id: 15,
+    title: "Kirby Broche, Nintendo",
+    src: "/images/image16.jpg",
+    category: "Produtos",
+    year: 2025,
+    description: "",
+  },
+   {
+    id: 16,
+    title: "The Mitski Club Broche",
+    src: "/images/image17.jpg",
+    category: "Produtos",
+    year: 2025,
+    description: "",
+  },
 ];
 
-const CATEGORIES = ["All", "Original", "Fanart", "Commissions"];
+const CATEGORIES = ["All", "Original", "Fanart", "Commissions", "Produtos"];
 
 export default function TakyllPortfolio() {
   const [selectedCategory, setSelectedCategory] = useState("All");
