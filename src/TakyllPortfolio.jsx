@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const GALLERY = [
   {
     id: 1,
-    title: "Homem Aranha",
+    title: "Homem Aranha, Marvel Comics",
     src: "/images/image1.jpg",
     category: "Fanart",
     year: 2025,
@@ -51,7 +51,7 @@ const GALLERY = [
   },
   {
     id: 7,
-    title: "GojoGeto",
+    title: "GojoGeto, Jujutsu Kaisen",
     src: "/images/image8.jpg",
     category: "Fanart",
     year: 2025,
@@ -105,6 +105,7 @@ export default function TakyllPortfolio() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [modalOpen, setModalOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [modalOpenMenu, setModalOpenMenu] = useState(false);
 
   const filtered =
     selectedCategory === "All"
@@ -131,14 +132,11 @@ export default function TakyllPortfolio() {
 
 return (
   <div className="relative min-h-screen text-gray-100 antialiased overflow-hidden">
-    {/* Fundo com linhas transparentes */}
     <div className="absolute inset-0 -z-10">
       <div className="w-full h-full bg-[#0f0f10] bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:80px_80px] animate-gridMotion"></div>
     </div>
 
-    {/* Conteúdo principal */}
     <div className="relative z-10">
-        {/* HEADER */}
         <header className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-md bg-gradient-to-br from-[#d945ff] to-[#645394] flex items-center justify-center font-bold text-white shadow-md">
@@ -161,11 +159,26 @@ return (
             <a href="#contact" className="hover:text-white">
               Contato
             </a>
-          </nav>
-          <div className="md:hidden text-gray-300">Menu</div>
+            </nav>
+
+          <div className="md:hidden relative">
+            <button
+              onClick={() => setModalOpenMenu((prev) => !prev)}
+              className="text-gray-300 border border-gray-700 px-3 py-1 rounded-md"
+            >
+              Menu
+            </button>
+
+            {modalOpenMenu && (
+              <div className="absolute right-0 mt-2 bg-gray-900 border border-gray-700 rounded-md shadow-lg z-50 flex flex-col">
+                <a href="#portfolio" onClick={() => setModalOpenMenu(false)} className="px-4 py-2 text-gray-300 hover:bg-gray-800">Portfólio</a>
+                <a href="#commissions" onClick={() => setModalOpenMenu(false)} className="px-4 py-2 text-gray-300 hover:bg-gray-800">Comissões</a>
+                <a href="#contact" onClick={() => setModalOpenMenu(false)} className="px-4 py-2 text-gray-300 hover:bg-gray-800">Contato</a>
+              </div>
+            )}
+          </div>
         </header>
 
-        {/* HERO */}
         <section className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1">
             <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
