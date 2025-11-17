@@ -43,7 +43,7 @@ const GALLERY = [
   },
   {
     id: 6,
-    title: "Cirse - Personagem de RPG",
+    title: "Circe - Personagem de RPG",
     src: "/images/image7.jpg",
     category: "Original",
     year: 2025,

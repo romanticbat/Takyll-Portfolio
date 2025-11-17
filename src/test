@@ -1,0 +1,998 @@
+$nomention
+
+$onlyIf[$checkContains[$customID;link-]==true;]
+
+$textSplit[$customID;-]
+$var[c1;$splitText[1]]
+$var[c2;$splitText[2]]
+$var[author only;$splitText[3]]
+
+$if[$var[c1]==link]
+$if[$var[author only]==$authorID]
+
+$onlyIf[$var[tbattle]!=false; ]
+
+$textSplit[$getVar[battle;$authorID];|]
+$var[name_user;$splitText[1]]
+$var[icon_user;$splitText[2]]
+
+$var[name_user2;$splitText[3]]
+$var[icon_user2;$splitText[4]]
+
+$var[tbattle;$splitText[5]]
+$var[id;$splitText[6]]
+$var[turns;$splitText[7]]
+$var[user_n;$splitText[8]]
+$var[tselect;$splitText[9]]
+$var[tmega;$splitText[10]]
+$var[id2;$getVar[user_connected;$authorID]]
+
+$textSplit[$getVar[battle;$var[id2]];|]
+$var[user2_n;$splitText[8]]
+$var[t2select;$splitText[9]]
+
+$if[$var[c2]==moves]
+$onlyIf[$var[t2select]!=false; ]
+
+$removeAllComponents[$var[id]]
+$deleteMessage[$channelID;$var[id]]
+
+$textSplit[$getVar[stats;$authorID];|]
+$var[user_name;$splitText[1]]
+$var[user_icon;$splitText[2]]
+$var[user_id;$splitText[3]]
+$var[user_item;$splitText[4]]
+$var[user_nature;$splitText[14]]
+$var[user_level;100]
+
+$var[hp_user;$splitText[5]]
+$var[user_atk;$splitText[6]]
+$var[user_def;$splitText[7]]
+$var[user_spatk;$splitText[8]]
+$var[user_spdef;$splitText[9]]
+$var[user_spdiv;$splitText[10]]
+
+$var[user_type;$splitText[11]]
+$var[user_type2;$splitText[12]]
+
+$textSplit[$getVar[info;$authorID];|]
+$var[user_attack_m;$splitText[1]]
+$var[user_defense_m;$splitText[2]]
+$var[user_special-attack_m;$splitText[3]]
+$var[user_special-defense_m;$splitText[4]]
+$var[user_speed_m;$splitText[5]]
+$var[user_accuracy_m;$splitText[6]]
+$var[user_evasiveness_m;$splitText[7]]
+
+$var[user_atks;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[1];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user_defs;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[2];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user_spatks;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[3];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user_spdefs;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[4];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user_spdivs;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[5];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user_acc;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[6];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user_eva;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[7];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user_atk;$calculate[$var[user_atk]*$var[user_atks]]]
+$var[user_def;$calculate[$var[user_def]*$var[user_defs]]]
+$var[user_spatk;$calculate[$var[user_spatk]*$var[user_spatks]]]
+$var[user_spdef;$calculate[$var[user_spdef]*$var[user_spdefs]]]
+$var[user_spdiv;$calculate[$var[user_spdiv]*$var[user_spdivs]]]
+
+$textSplit[$getVar[moves;$authorID];|]
+$var[moves1_user;$splitText[1]]
+$var[moves2_user;$splitText[4]]
+$var[moves3_user;$splitText[7]]
+$var[moves4_user;$splitText[10]]
+
+$textSplit[$getVar[stats;$var[id2]];|]
+$var[user2_name;$splitText[1]]
+$var[user2_icon;$splitText[2]]
+$var[user2_id;$splitText[3]]
+$var[user2_item;$splitText[4]]
+$var[user2_nature;$splitText[14]]
+$var[user2_level;100]
+
+$var[hp_user2;$splitText[5]]
+$var[user2_atk;$splitText[6]]
+$var[user2_def;$splitText[7]]
+$var[user2_spatk;$splitText[8]]
+$var[user2_spdef;$splitText[9]]
+$var[user2_spdiv;$splitText[10]]
+
+$var[user2_type;$splitText[11]]
+$var[user2_type2;$splitText[12]]
+
+$textSplit[$getVar[info;$var[id2]];|]
+$var[user2_attack_m;$splitText[1]]
+$var[user2_defense_m;$splitText[2]]
+$var[user2_special-attack_m;$splitText[3]]
+$var[user2_special-defense_m;$splitText[4]]
+$var[user2_speed_m;$splitText[5]]
+$var[user2_accuracy_m;$splitText[6]]
+$var[user2_evasiveness_m;$splitText[7]]
+
+$var[user2_atks;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[1];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user2_defs;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[2];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user2_spatks;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[3];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user2_spdefs;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[4];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user2_spdivs;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[5];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user2_acc;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[6];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user2_eva;$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$splitText[7];0;1.0];+1;1.3333];+2;1.6667];+3;2.0];+4;2.3333];+5;2.6667];+6;3.0];-1;0.75];-2;0.6];-3;0.5];-4;0.4286];-5;0.375];-6;0.3333]]
+
+$var[user2_atk;$calculate[$var[user_atk]*$var[user_atks]]]
+$var[user2_def;$calculate[$var[user_def]*$var[user_defs]]]
+$var[user2_spatk;$calculate[$var[user_spatk]*$var[user_spatks]]]
+$var[user2_spdef;$calculate[$var[user_spdef]*$var[user_spdefs]]]
+$var[user2_spdiv;$calculate[$var[user_spdiv]*$var[user_spdivs]]]
+
+$textSplit[$getVar[moves;$var[id2]];|]
+$var[moves1_user2;$splitText[1]]
+$var[moves2_user2;$splitText[4]]
+$var[moves3_user2;$splitText[7]]
+$var[moves4_user2;$splitText[10]]
+
+$textSplit[$getVar[round;$authorID];|]
+$var[user_hp;$splitText[1]]
+$var[npc_hp;$splitText[2]]
+
+$var[user_eff;$splitText[3]]
+$var[user_effr;$splitText[4]]
+
+$var[npc_eff;$splitText[5]]
+$var[npc_effr;$splitText[6]]
+$var[back;$splitText[7]]
+$var[recharge;$splitText[8]]
+$var[recharge2;$splitText[9]]
+
+$if[$var[turns]==1]
+$var[user_hp;$var[hp_user]]
+$var[user2_hp;$var[hp_user2]]
+$endif
+
+$var[turns;$sum[$var[turns];1]]
+$var[msg;What would do you now?]
+
+$var[mov;<:atkm:1413376242509680700>]
+$var[atk;<:satk:1413378127178236054>]
+$var[def;<:sdef:1413377984559059055>]
+$var[spatk;<:sspatk:1413378315749822515>]
+$var[spdef;<:sdpfef:1413377926220484660>]
+$var[spdiv;<:sspdiv:1413378302885757061>]
+$var[acc;<:acc:1430145694642999397>]
+$var[eva;<:eva:1430145692818604072>]
+$var[recoil;<:recoil:1425561478291001435>]
+$var[recover;<:heal:1413377195375726653>]
+$var[i;<:icon_info:1413219611859615907>]
+$var[s;<:icon_star:1423883116526698516>]
+$var[c;<:icon_sf:1413377027054239774>]
+$var[poison;<:poison:1425649015583805610>]
+$var[burn;<:burn:1425651749708103861>]
+
+$httpGet[https://pokeapi.co/api/v2/move/$toLowercase[$var[moves$var[user_n]_user]]/]
+$var[power_user;$httpResult[power]]
+$var[priority_user;$httpResult[priority]]
+$var[accuracy_user;$httpResult[accuracy]]
+$var[mtype_user;$httpResult[type;name]]
+$var[class_user;$httpResult[damage_class;name]]
+$var[mt_user;$httpResult[meta;ailment;name]]
+$var[mc_user;$httpResult[meta;ailment_chance]]
+
+$if[$var[mc_user]==0]
+$var[mc_user;100]
+$endif
+
+$var[status_user;$httpResult[stat_changes;0;change]]
+$var[stats_user;$httpResult[stat_changes;0;stat;name]]
+$var[status2_user;$httpResult[stat_changes;1;change]]
+$var[stats2_user;$httpResult[stat_changes;1;stat;name]]
+$var[sh_user;$httpResult[effect_entries;0;short_effect]]
+
+$textSplit[$var[sh_user]; ]
+$var[d_user;$splitText[6]]
+$var[d2_user;$splitText[7]]
+
+$httpGet[https://pokeapi.co/api/v2/move/$toLowercase[$var[moves$var[user2_n]_user2]]/]
+$var[power_user2;$httpResult[power]]
+$var[priority_user2;$httpResult[priority]]
+$var[accuracy_user2;$httpResult[accuracy]]
+$var[mtype_user2;$httpResult[type;name]]
+$var[class_user2;$httpResult[damage_class;name]]
+$var[mt_user2;$httpResult[meta;ailment;name]]
+$var[mc_user2;$httpResult[meta;ailment_chance]]
+
+$if[$var[mc_user2]==0]
+$var[mc_user2;100]
+$endif
+
+$var[status_user2;$httpResult[stat_changes;0;change]]
+$var[stats_user2;$httpResult[stat_changes;0;stat;name]]
+$var[status2_user2;$httpResult[stat_changes;1;change]]
+$var[stats2_user2;$httpResult[stat_changes;1;stat;name]]
+$var[sh_user2;$httpResult[effect_entries;0;short_effect]]
+
+$textSplit[$var[sh_user2]; ]
+$var[d_user2;$splitText[6]]
+$var[d2_user2;$splitText[7]]
+
+$if[$var[accuracy_user]==]
+$var[user_nm;100]
+$else $var[user_nm;$calculate[$var[accuracy_user]*($var[user_acc]/$var[user2_eva])]]
+$endif
+
+$if[$var[accuracy_user2]==]
+$var[user2_nm;100]
+$else $var[user2_nm;$calculate[$var[accuracy_user2]*($var[user2_acc]/$var[user_eva])]]
+$endif
+
+$if[$random[1;99]<$var[user_nm]]
+$var[user_nm;]
+$else $var[user_nm;a]
+$endif
+
+$if[$random[1;99]<$var[user2_nm]]
+$var[user2_nm;]
+$else $var[user2_nm;a]
+$endif
+
+$if[$var[priority_user]>$var[priority_user2]]
+$var[p;user]
+$var[p2;user2]
+
+$elseif[$var[priority_user2]>$var[priority_user]]
+$var[p;user2]
+$var[p2;user]
+
+$elseif[$var[user_spdiv]>$var[user2_spdiv]]
+$var[p;user]
+$var[p2;user2]
+
+$elseif[$var[user2_spdiv]>$var[user_spdiv]]
+$var[p;user2]
+$var[p2;user]
+
+$else $var[p;$randomText[user$var[p2;user2];user2$var[p2;user]]]
+$endif
+
+$if[$var[mtype_user]==$var[user_type]]
+$var[stab_user;1.5]
+$elseif[$var[mtype_user]==$var[user_type2]]
+$var[stab_user;1.5]
+$else $var[stab_user;1]
+$endif
+
+$if[$var[mtype_user2]==$var[user2_type]]
+$var[stab_user2;1.5]
+$elseif[$var[mtype_user2]==$var[user2_type2]]
+$var[stab_user2;1.5]
+$else $var[stab_user2;1]
+$endif
+
+$httpGet[https://pokeapi.co/api/v2/type/$var[mtype_user]/]
+$if[$checkContains[$httpResult[damage_relations;double_damage_to];$var[user2_type]]==true]
+$var[ty_user;2]
+$elseif[$checkContains[$httpResult[damage_relations;half_damage_to];$var[user2_type]]==true]
+$var[ty_user;0.5]
+$elseif[$checkContains[$httpResult[damage_relations;no_damage_to];$var[user2_type]]==true]
+$var[ty_user;0]
+$else $var[ty_user;1]
+$endif
+
+$if[$var[user2_type2]==]
+$var[ty2_user;1]
+$elseif[$checkContains[$httpResult[damage_relations;double_damage_to];$var[user2_type2]]==true]
+$var[ty2_user;2]
+$elseif[$checkContains[$httpResult[damage_relations;half_damage_to];$var[user2_type2]]==true]
+$var[ty2_user;0.5]
+$elseif[$checkContains[$httpResult[damage_relations;no_damage_to];$var[user2_type2]]==true]
+$var[ty2_user;0]
+$else $var[ty2_user;1]
+$endif
+
+$httpGet[https://pokeapi.co/api/v2/type/$var[mtype_user2]/]
+$if[$checkContains[$httpResult[damage_relations;double_damage_to];$var[user_type]]==true]
+$var[ty_user2;2]
+$elseif[$checkContains[$httpResult[damage_relations;half_damage_to];$var[user_type]]==true]
+$var[ty_user2;0.5]
+$elseif[$checkContains[$httpResult[damage_relations;no_damage_to];$var[user_type]]==true]
+$var[ty_user2;0]
+$else $var[ty_user2;1]
+$endif
+
+$if[$var[user_type2]==]
+$var[ty2_user2;1]
+$elseif[$checkContains[$httpResult[damage_relations;double_damage_to];$var[user_type2]]==true]
+$var[ty2_user2;2]
+$elseif[$checkContains[$httpResult[damage_relations;half_damage_to];$var[user_type2]]==true]
+$var[ty2_user2;0.5]
+$elseif[$checkContains[$httpResult[damage_relations;no_damage_to];$var[user_type2]]==true]
+$var[ty2_user2;0]
+$else $var[ty2_user2;1]
+$endif
+
+$enableDecimals[yes]
+$var[ty_npc;$calculate[$var[ty_user2]*$var[ty2_user2]]]
+$var[ty_user;$calculate[$var[ty_user]*$var[ty2_user]]]
+$var[random_user;$calculate[$random[85;100]/100]]
+$var[random_user2;$calculate[$random[85;100]/100]]
+$enableDecimals[no]
+
+$if[$var[ty_user]==0]
+$var[user_m;
+
+:x: **$var[user2_icon] $var[user2_name]** is immune!]
+$elseif[$var[ty_user]<1]
+$var[user_m;
+
+:arrow_right: It was not very effective...]
+$elseif[$var[ty_user]>1]
+$var[user_m;
+
+$var[c] Move was **super effective** on **$var[user2_icon] $var[user2_name]**!]
+$endif
+
+$if[$var[ty_user2]==0]
+$var[user2_m;
+
+:x: **$var[user_icon] $var[user_name]** is immune!]
+$elseif[$var[ty_user2]<1]
+$var[user2_m;
+
+:arrow_right: It was not very effective...]
+$elseif[$var[ty_user2]>1]
+$var[user2_m;
+
+$var[c] Move was **super effective** on **$var[user_icon] $var[user_name]**!]
+$endif
+
+$var[n;**$var[$var[p]_icon] $var[$var[p]_name]**]
+$var[n2;**$var[$var[p2]_icon] $var[$var[p2]_name]**]
+
+$if[$var[c_user]==1]
+$var[c_user;1.5]
+$var[user_m;$var[user_m]
+
+$var[s] It was a **critical hit** on $var[n1]!]
+$else $var[c_user;1]
+$endif
+
+$if[$var[c_user2]==1]
+$var[c_user2;1.5]
+$var[user2_m;$var[user2_m]
+
+$var[s] It was a **critical hit** on $var[n]!]
+$else $var[c_user2;1]
+$endif
+
+$var[damage_$var[p];0]
+$var[damage_$var[p2];0]
+
+$if[$var[user_eff]==paralysis]
+$var[u;$random[0;99]]
+
+$if[$random[0;99]<25]
+$var[user_stop;true]
+$var[user_sr;PAR]
+$endif $endif
+
+$if[$var[user_eff]==sleep]
+$var[user_stop;true]
+$var[user_sr;SLP]
+
+$if[$var[turns]==$var[user_effr]]
+$var[user_stop;]
+$var[user_sr;]
+$endif $endif
+
+$if[$var[user2_eff]==paralysis]
+$var[u;$random[0;99]]
+
+$if[$random[0;99]<25]
+$var[user2_stop;true]
+$var[user2_sr;PAR]
+$endif $endif
+
+$if[$var[user2_eff]==sleep]
+$var[user2_stop;true]
+$var[user2_sr;SLP]
+
+$if[$var[turns]==$var[user2_effr]]
+$var[user2_stop;]
+$var[user2_sr;]
+$endif $endif
+
+$if[$var[recharge]==true]
+$var[user_stop;true]
+$var[user_sr;recharge]
+$var[recharge;false]
+$endif
+
+$if[$var[recharge2]==true]
+$var[user2_stop;true]
+$var[user2_sr;recharge]
+$var[recharge2;false]
+$endif
+
+$if[$var[$var[p]_nm]==]
+$if[$var[$var[p]_stop]==]
+$if[$var[ty_$var[p]]==0]
+
+$elseif[$var[class_$var[p]]==special]
+$if[$var[power_$var[p]]==]
+$var[damage_$var[p];40]
+$else $var[damage_$var[p];$calculate[((2*$var[$var[p]_level]/5+2)*$var[power_$var[p]]*$var[$var[p]_spatk]/$var[$var[p2]_spdef]/50+2)*1*$var[c_$var[p]]*$var[random_$var[p]]*$var[stab_$var[p]]*1]]
+$endif
+
+$if[$var[moves$var[$var[p]_n]_$var[p]]==Venoshock]
+$if[$var[$var[p2]_eff]==poison]
+$var[damage_$var[p];$calculate[$var[damage_$var[p]]*2]]
+$endif $endif
+
+$elseif[$var[class_$var[p]]==physical]
+$var[damage_$var[p];$calculate[((2*$var[$var[p]_level]/5+2)*$var[power_$var[p]]*$var[$var[p]_atk]/$var[$var[p2]_def]/50+2)*1*$var[c_$var[p]]*$var[random_$var[p]]*$var[stab_$var[p]]*1]]
+$endif
+
+$var[$var[p2]_hp;$sub[$var[$var[p2]_hp];$var[damage_$var[p]]]]
+$var[$var[p]_m;> It dealt `` $var[damage_$var[p]] `` damage!$var[$var[p]_m]]
+
+$if[$var[stats_$var[p]]==]
+$else $if[$var[stats_$var[p]]==attack]
+$var[ts;ATK]
+$var[is;$var[atk]]
+
+$elseif[$var[stats_$var[p]]==defense]
+$var[ts;DEF]
+$var[is;$var[def]]
+
+$elseif[$var[stats_$var[p]]==special-attack]
+$var[ts;SPA]
+$var[is;$var[spatk]]
+
+$elseif[$var[stats_$var[p]]==special-defense]
+$var[ts;SPD]
+$var[is;$var[spdef]]
+
+$elseif[$var[stats_$var[p]]==speed]
+$var[ts;SPE]
+$var[is;$var[spdiv]]
+
+$elseif[$var[stats_$var[p]]==accuracy]
+$var[ts;accuracy]
+$var[is;$var[acc]]
+
+$elseif[$var[stats_$var[p]]==evasiveness]
+$var[ts;evasiveness]
+$var[is;$var[eva]]
+$endif
+
+$if[$checkContains[$var[sh_$var[p]];Raises the user;Raises user]==true]
+$var[$var[p]_$var[stats_$var[p]]_m;$sum[$var[$var[p]_$var[stats_$var[p]]_m];$var[status_$var[p]]]]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[is] $var[n]'s **$var[ts]** rose!]
+
+$elseif[$checkContains[$var[sh_$var[p]];Raises the target;Raises target]==true]
+$var[$var[p2]_$var[stats_$var[p]]_m;$sum[$var[$var[p2]_$var[stats_$var[p]]_m];$var[status_$var[p]]]]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[is] $var[n2]'s **$var[ts]** rose!]
+
+$elseif[$checkContains[$var[sh_$var[p]];Lowers user;Lowers the user]==true]
+$var[$var[p]_$var[stats_$var[p]]_m;$sum[$var[$var[p]_$var[stats_$var[p]]_m];$var[status_$var[p]]]]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[is] $var[n]'s **$var[ts]** lowered...]
+
+$elseif[$checkContains[$var[sh_$var[p]];Lowers target;Lowers the target]==true]
+
+$var[$var[p2]_$var[stats_$var[p]]_m;$sum[$var[$var[p2]_$var[stats_$var[p]]_m];$var[status_$var[p]]]]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[is] $var[n2]'s **$var[ts]** lowered...]
+$endif $endif
+
+$if[$var[stats2_$var[p]]==]
+$else $if[$var[stats2_$var[p]]==attack]
+$var[ts;ATK]
+$var[is;$var[atk]]
+
+$elseif[$var[stats2_$var[p]]==defense]
+$var[ts;DEF]
+$var[is;$var[def]]
+
+$elseif[$var[stats2_$var[p]]==special-attack]
+$var[ts;SPA]
+$var[is;$var[spatk]]
+
+$elseif[$var[stats2_$var[p]]==special-defense]
+$var[ts;SPD]
+$var[is;$var[spdef]]
+
+$elseif[$var[stats2_$var[p]]==speed]
+$var[ts;SPE]
+$var[is;$var[spdiv]]
+
+$elseif[$var[stats2_$var[p]]==accuracy]
+$var[ts;accuracy]
+$var[is;$var[acc]]
+
+$elseif[$var[stats2_$var[p]]==evasiveness]
+$var[ts;evasiveness]
+$var[is;$var[eva]]
+$endif 
+
+$if[$checkContains[$var[sh_$var[p]];Raises the user’s;Raises user’s]==true]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[is] $var[n]'s **$var[ts]** rose!]
+
+$elseif[$checkContains[$var[sh_$var[p]];Raises the target's;Raises target's]==true]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[is] $var[n2]'s **$var[ts]** rose!]
+
+$elseif[$checkContains[$var[sh_$var[p]];Lowers user's;Lowers the user's]==true]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[is] $var[n]'s **$var[ts]** lowered...]
+
+$elseif[$checkContains[$var[sh_$var[p]];Lowers target;Lowers the target]==true]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[is] $var[n2]'s **$var[ts]** lowered...]
+$endif $endif
+
+$if[$var[d_$var[p]]==inflicted]
+$if[$var[d2_$var[p]]==in]
+$var[dr;$calculate[$var[damage_$var[p]]/3]]
+$var[$var[p]_hp;$sub[$var[$var[p]_hp];$var[dr]]]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[recoil] $var[n] was damaged by the recoil!]
+$endif $endif
+
+$if[$var[d_$var[p]]==to]
+$if[$var[d2_$var[p]]==recharge.]
+$var[recharge;true]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[i] $var[n] must recharge from last turn!]
+$endif $endif
+
+$if[$var[d_$var[p]]==its]
+$if[$var[d2_$var[p]]==max]
+$var[$var[p]_hp;$sum[$var[$var[p]_hp];$calculate[$var[hp_$var[p]]/2]]]
+
+$if[$var[$var[p]_hp]>$var[hp_$var[p]]]
+$var[$var[p]_hp;$var[hp_$var[p]]]
+$endif
+
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[recover] $var[n] gained some HP!]
+$endif $endif
+
+$if[$var[d_$var[p]]==to]
+$if[$var[d2_$var[p]]==heal]
+$sum[$var[$var[p]_hp];$calculate[$var[damage_$var[p]]*0.5]]
+
+$if[$var[$var[p]_hp]>$var[hp_$var[p]]]
+$var[$var[p]_hp;$var[hp_$var[p]]]
+$endif
+
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[recover] $var[n] gained some HP!]
+$endif $endif
+
+$if[$var[$var[p2]_eff]==no]
+$if[$var[mt_$var[p]]==burn]
+$if[$var[$var[p2]_type]==fire]
+
+$elseif[$var[$var[p2]_type2]==fire]
+$elseif[$random[0;99]<$var[mc_$var[p]]]
+$var[$var[p2]_eff;burn]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[i] $var[n2] was burned!]
+$endif $endif
+$endif
+
+$if[$var[$var[p2]_eff]==no]
+$if[$var[mt_$var[p]]==paralysis]
+
+$if[$var[$var[p2]_type]==electric]
+$elseif[$var[$var[p2]_type2]==electric]
+
+$elseif[$var[$var[p2]_type]==ground]
+$elseif[$var[$var[p2]_type2]==ground]
+
+$elseif[$random[0;99]<$var[mc_$var[p]]]
+$var[$var[p2]_eff;paralysis]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[i] $var[n2] is paralyzed! 
+> It may be unable to move!]
+$var[u;$random[0;99]]
+
+$if[$random[0;99]<25]
+$var[$var[p2]_stop;true]
+$var[$var[p2]_sr;PAR]
+$endif $endif $endif 
+$endif
+
+$if[$var[$var[p2]_eff]==no]
+$if[$var[mt_$var[p]]==poison]
+
+$if[$var[$var[p2]_type]==poison]
+$elseif[$var[$var[p2]_type2]==poison]
+
+$elseif[$var[$var[p2]_type]==steel]
+$elseif[$var[$var[p2]_type2]==steel]
+
+$elseif[$random[0;99]<$var[mc_$var[p]]]
+$var[$var[p2]_eff;poison]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[i] $var[n2] was poisoned!]
+$endif $endif
+$endif
+
+$if[$var[$var[p2]_eff]==no]
+$if[$var[mt_$var[p]]==sleep]
+$if[$random[0;99]<$var[mc_$var[p]]]
+$var[$var[p2]_eff;sleep]
+$var[$var[p2]_stop;true]
+$var[$var[p2]_sr;SLP]
+
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[i] $var[n2] fell asleep!]
+$endif $endif
+$endif
+
+$var[$var[p]_m;$var[mov] $var[n] **used $toTitleCase[$var[moves$var[$var[p]_n]_$var[p]]]!**
+$var[$var[p]_m]]
+
+$else $var[$var[p]_m;:x: $var[n] coudn't use move because of **$var[$var[p]_sr]**!]
+$endif
+
+$else $var[$var[p]_m;$var[mov] $var[n] **used $toTitleCase[$var[moves$var[$var[p]_n]_$var[p]]]!**
+
+$var[i] *$var[n]'s move missed!*]
+$endif
+
+$if[$var[$var[p]_eff]==burn]
+$var[$var[p]_hp;$sub[$var[$var[p]_hp];$calculate[$var[$var[p]_hp]/16]]]
+$var[eff_m;
+
+$var[burn] $var[n] was hurt by its burn!]
+$endif
+
+$if[$var[$var[p]_eff]==poison]
+$var[$var[p]_hp;$sub[$var[$var[p]_hp];$calculate[$var[$var[p]_hp]/8]]]
+$var[eff_m;$var[eff_m]
+
+$var[poison] $var[n] was hurt by poison!]
+$endif
+
+$if[$var[$var[p2]_hp]<=0]
+$var[$var[p2]_hp;0]
+$var[end;true]
+$var[f;$var[$var[p]_nick] has won the battle!]
+
+$var[$var[p2]_m;$var[i] **All of $var[$var[p2]_pss] $var[$var[p2]_nick]'s Pokémon have fainted!**
+
+$var[n2] lost rest of its HP!
+
+$var[n2] has fainted.]
+$var[msg;**$var[$var[p2]_pss] $var[$var[p2]_nick]** lost the battle!]
+
+$elseif[$var[$var[p2]_hp]>0]
+
+$if[$var[$var[p2]_nm]==]
+$if[$var[$var[p2]_stop]==]
+$if[$var[moves$var[$var[p]_n]_$var[p]]==Protect]
+$var[$var[p2]_m;> It dealt `` $var[damage_$var[p2]] `` damage!
+
+<:protect:1425617616155967613> $var[n]'s protected itself!]
+$else $if[$var[ty_$var[p2]]==0]
+
+$elseif[$var[class_$var[p2]]==special]
+$if[$var[power_$var[p2]]==]
+$var[damage_$var[p2];40]
+$else $var[damage_$var[p2];$calculate[((2*$var[$var[p2]_level]/5+2)*$var[power_$var[p2]]*$var[$var[p2]_spatk]/$var[$var[p]_spdef]/50+2)*1*$var[c_$var[p2]]*$var[random_$var[p2]]*$var[stab_$var[p2]]*1]]
+$endif
+
+$if[$var[moves$var[$var[p2]_n]_$var[p2]]==Venoshock]
+$if[$var[$var[p]_eff]==poison]
+$var[damage_$var[p2];$calculate[$var[damage_$var[p2]]*2]]
+$endif $endif
+
+$elseif[$var[class_$var[p2]]==physical]
+$var[damage_$var[p2];$calculate[((2*$var[$var[p2]_level]/5+2)*$var[power_$var[p2]]*$var[$var[p2]_atk]/$var[$var[p]_def]/50+2)*1*$var[c_$var[p2]]*$var[random_$var[p2]]*$var[stab_$var[p2]]*1]]
+$endif
+
+$var[$var[p]_hp;$sub[$var[$var[p]_hp];$var[damage_$var[p2]]]]
+$var[$var[p2]_m;> It dealt `` $var[damage_$var[p2]] `` damage!$var[$var[p2]_m]]
+
+$if[$var[stats_$var[p2]]==]
+$else $if[$var[stats_$var[p2]]==attack]
+$var[ts;ATK]
+$var[is;$var[atk]]
+
+$elseif[$var[stats_$var[p2]]==defense]
+$var[ts;DEF]
+$var[is;$var[def]]
+
+$elseif[$var[stats_$var[p2]]==special-attack]
+$var[ts;SPA]
+$var[is;$var[spatk]]
+
+$elseif[$var[stats_$var[p2]]==special-defense]
+$var[ts;SPD]
+$var[is;$var[spdef]]
+
+$elseif[$var[stats_$var[p2]]==speed]
+$var[ts;SPE]
+$var[is;$var[spdiv]]
+
+$elseif[$var[stats_$var[p2]]==accuracy]
+$var[ts;accuracy]
+$var[is;$var[acc]]
+
+$elseif[$var[stats_$var[p2]]==evasiveness]
+$var[ts;evasiveness]
+$var[is;$var[eva]]
+$endif 
+
+$if[$checkContains[$var[sh_$var[p2]];Raises the user;Raises user]==true]
+$var[$var[p2]_$var[stats_$var[p2]]_m;$sum[$var[$var[p2]_$var[stats_$var[p2]]_m];$var[status_$var[p2]]]]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[is] $var[n2]'s **$var[ts]** rose!]
+
+$elseif[$checkContains[$var[sh_$var[p2]];Raises the target;Raises target]==true]
+$var[$var[p]_$var[stats_$var[p2]]_m;$sum[$var[$var[p]_$var[stats_$var[p2]]_m];$var[status_$var[p2]]]]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[is] $var[n2]'s **$var[ts]** rose!]
+
+$elseif[$checkContains[$var[sh_$var[p2]];Lowers user;Lowers the user]==true]
+$var[$var[p2]_$var[stats_$var[p2]]_m;$sum[$var[$var[p2]_$var[stats_$var[p2]]_m];$var[status_$var[p2]]]]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[is] $var[n2]'s **$var[ts]** lowered...]
+
+$elseif[$checkContains[$var[sh_$var[p2]];Lowers target;Lowers the target]==true]
+$var[$var[p]_$var[stats_$var[p2]]_m;$sum[$var[$var[p]_$var[stats_$var[p2]]_m];$var[status_$var[p2]]]]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[is] $var[n]'s **$var[ts]** lowered...]
+$endif $endif
+
+$if[$var[stats2_$var[p2]]==]
+$else $if[$var[stats2_$var[p2]]==attack]
+$var[ts;ATK]
+$var[is;$var[atk]]
+
+$elseif[$var[stats2_$var[p2]]==defense]
+$var[ts;DEF]
+$var[is;$var[def]]
+
+$elseif[$var[stats2_$var[p2]]==special-attack]
+$var[ts;SPA]
+$var[is;$var[spatk]]
+
+$elseif[$var[stats2_$var[p2]]==special-defense]
+$var[ts;SPD]
+$var[is;$var[spdef]]
+
+$elseif[$var[stats2_$var[p2]]==speed]
+$var[ts;SPE]
+$var[is;$var[spdiv]]
+
+$elseif[$var[stats2_$var[p2]]==accuracy]
+$var[ts;accuracy]
+$var[is;$var[acc]]
+
+$elseif[$var[stats2_$var[p2]]==evasiveness]
+$var[ts;evasiveness]
+$var[is;$var[eva]]
+$endif 
+
+$if[$checkContains[$var[sh_$var[p2]];Raises the user;Raises user]==true]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[is] $var[n2]'s **$var[ts]** rose!]
+
+$elseif[$checkContains[$var[sh_$var[p2]];Raises the target;Raises target]==true]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[is] $var[n2]'s **$var[ts]** rose!]
+
+$elseif[$checkContains[$var[sh_$var[p2]];Lowers user;Lowers the user]==true]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[is] $var[n2]'s **$var[ts]** lowered...]
+
+$elseif[$checkContains[$var[sh_$var[p2]];Lowers target;Lowers the target]==true]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[is] $var[n]'s **$var[ts]** lowered...]
+$endif $endif
+
+$if[$var[d_$var[p2]]==inflicted]
+$if[$var[d2_$var[p2]]==in]
+$var[dr;$calculate[$var[damage_$var[p2]]/3]]
+$var[$var[p2]_hp;$sub[$var[$var[p2]_hp];$var[dr]]]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[recoil] $var[n2] was damaged by the recoil!]
+$endif $endif
+
+$if[$var[d_$var[p2]]==to]
+$if[$var[d2_$var[p2]]==recharge.]
+$var[recharge;true]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[i] $var[n2] must recharge from last turn!]
+$endif $endif
+
+$if[$var[d_$var[p2]]==its]
+$if[$var[d2_$var[p2]]==max]
+$var[$var[p2]_hp;$sum[$var[$var[p2]_hp];$calculate[$var[hp_$var[p2]]/2]]]
+
+$if[$var[$var[p2]_hp]>$var[hp_$var[p2]]]
+$var[$var[p2]_hp;$var[hp_$var[p2]]]
+$endif
+
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[recover] $var[n2] gained some HP!]
+$endif $endif
+
+$if[$var[d_$var[p2]]==to]
+$if[$var[d2_$var[p2]]==heal]
+$sum[$var[$var[p2]_hp];$calculate[$var[damage_$var[p2]]*0.5]]
+
+$if[$var[$var[p2]_hp]>$var[hp_$var[p2]]]
+$var[$var[p2]_hp;$var[hp_$var[p2]]]
+$endif
+
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[recover] $var[n2] gained some HP!]
+$endif $endif
+$endif
+
+$if[$var[$var[p]_eff]==no]
+$if[$var[mt_$var[p2]]==burn]
+$if[$var[$var[p]_type]==fire]
+
+$elseif[$var[$var[p]_type2]==fire]
+$elseif[$random[0;99]<$var[mc_$var[p2]]]
+$var[$var[p]_eff;burn]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[i] $var[n] was burned!]
+$endif $endif
+$endif
+
+$if[$var[$var[p]_eff]==no]
+$if[$var[mt_$var[p2]]==poison]
+$if[$var[$var[p]_type]==poison]
+
+$elseif[$var[$var[p]_type2]==poison]
+$elseif[$var[$var[p]_type]==steel]
+$elseif[$var[$var[p]_type2]==steel]
+
+$elseif[$random[0;99]<$var[mc_$var[p2]]]
+$var[$var[p]_eff;poison]
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[i] $var[n] was poisoned!]
+$endif $endif
+$endif
+
+$if[$var[$var[p2]_eff]==no]
+$if[$var[mt_$var[p]]==paralysis]
+
+$if[$var[$var[p2]_type]==electric]
+$elseif[$var[$var[p2]_type2]==electric]
+
+$elseif[$var[$var[p2]_type]==ground]
+$elseif[$var[$var[p2]_type2]==ground]
+
+$elseif[$random[0;99]<$var[mc_$var[p]]]
+$var[$var[p2]_eff;paralysis]
+$var[$var[p]_m;$var[$var[p]_m]
+
+$var[i] $var[n2] is paralyzed! 
+> It may be unable to move!]
+$var[u;$random[0;99]]
+
+$if[$random[0;99]<25]
+$var[$var[p2]_stop;true]
+$var[$var[p2]_sr;PAR]
+$endif $endif $endif 
+$endif
+
+$if[$var[$var[p]_eff]==no]
+$if[$var[mt_$var[p2]]==sleep]
+$if[$random[0;99]<$var[mc_$var[p2]]]
+$var[$var[p]_eff;sleep]
+$var[$var[p]_stop;true]
+$var[$var[p]_sr;SLP]
+
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[i] $var[n] fell asleep!]
+$endif $endif
+$endif
+
+$var[$var[p2]_m;$var[mov] $var[n2] **used $toTitleCase[$var[moves$var[$var[p2]_n]_$var[p2]]]!**
+$var[$var[p2]_m]]
+
+$else $var[$var[p2]_m;:x: $var[n2] coudn't use move because of **$var[$var[p2]_sr]**!]
+$endif
+
+$else $var[$var[p2]_m;$var[mov] $var[n2] **used $toTitleCase[$var[moves$var[$var[p2]_n]_$var[p2]]]!**
+
+$var[i] *$var[n2]'s move missed!*]
+$endif
+
+$if[$var[$var[p2]_eff]==burn]
+$var[$var[p2]_hp;$sub[$var[$var[p2]_hp];$calculate[$var[$var[p2]_hp]/16]]]
+$var[eff_m;$var[eff_m]
+
+$var[burn] $var[n2] was hurt by its burn!]
+$endif
+
+$if[$var[$var[p2]_eff]==poison]
+$var[$var[p2]_hp;$sub[$var[$var[p2]_hp];$calculate[$var[$var[p2]_hp]/8]]]
+$var[eff_m;$var[eff_m]
+
+$var[poison] $var[n2] was hurt by poison!]
+$endif
+
+$if[$var[$var[p]_hp]<=0]
+$var[$var[p]_hp;0]
+$var[end;true]
+$var[f;$var[$var[p2]_nick] has won the battle!]
+
+$var[$var[p2]_m;$var[$var[p2]_m]
+
+$var[i] **All of $var[$var[p]_pss] $var[$var[p]_nick]'s Pokémon have fainted!**
+
+$var[n] lost rest of its HP!
+
+$var[n] has fainted.]
+$var[msg;**$var[$var[p]_pss] $var[$var[p]_nick]** lost the battle!]
+$endif $endif
+
+$var[id;$sendEmbedMessage[$channelID;;;;## $var[user_pss] $var[user_nick]'s Pokémon! - Level $var[user_level]
+**<:book:1425976318519939112> Trainer Battle**
+> $var[user_pss] **$var[user_nick]** Vs. $var[npc_pss] **$var[npc_nick]**!
+
+**<:controle:1425976294352490496> Battle Logs**
+$var[$var[p]_m]
+
+$var[$var[p2]_m]$var[eff_m]
+
+<:icon_star:1423883116526698516> **Turn** `` $var[turns] ``
+> $var[msg];86cbfd;;;$var[f];$userAvatar[$authorID];;$var[image];yes;yes]]
+$endif
+
+$endif $endif
