@@ -97,8 +97,16 @@ const GALLERY = [
     year: 2025,
     description: "",
   },
-    {
+  {
     id: 13,
+    title: "Gwen, Knights of Guinevere",
+    src: "/images/image18.jpg",
+    category: "Fanart",
+    year: 2025,
+    description: "",
+  },
+    {
+    id: 14,
     title: "Kirby, Nintendo",
     src: "/images/image14.jpg",
     category: "Fanart",
@@ -106,7 +114,7 @@ const GALLERY = [
     description: "",
   },
     {
-    id: 14,
+    id: 15,
     title: "The Mitski Club",
     src: "/images/image15.jpg",
     category: "Fanart",
@@ -114,7 +122,7 @@ const GALLERY = [
     description: "",
   },
     {
-    id: 15,
+    id: 16,
     title: "Kirby Broche, Nintendo",
     src: "/images/image16.jpg",
     category: "Produtos",
@@ -122,7 +130,7 @@ const GALLERY = [
     description: "",
   },
    {
-    id: 16,
+    id: 17,
     title: "The Mitski Club Broche",
     src: "/images/image17.jpg",
     category: "Produtos",
