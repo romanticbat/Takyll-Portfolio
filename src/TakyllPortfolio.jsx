@@ -145,6 +145,14 @@ const GALLERY = [
     year: 2025,
     description: "",
   },
+    {
+    id: 18,
+    title: "Hexatombe",
+    src: "/images/image20.jpg",
+    category: "Fanart",
+    year: 2025,
+    description: "",
+  },
 ];
 
 const CATEGORIES = ["All", "Original", "Fanart", "Commissions", "Produtos"];
